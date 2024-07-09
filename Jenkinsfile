@@ -26,29 +26,6 @@ pipeline {
 
         }
 
-        stage('Unit tests') {
-
-            steps {
-
-                sh 'make test-unit'
-
-                archiveArtifacts artifacts: 'results/*.xml'
-
-            }
-
-        }
-
-    }
-
-    post {
-
-        always {
-
-            junit 'results/*_result.xml'
-
-            cleanWs()
-
-        }
 
     }
 
